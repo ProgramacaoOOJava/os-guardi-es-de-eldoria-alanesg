@@ -1,17 +1,21 @@
-public class Personagem { //criando classe "Personagem" e seus atributos
-    String nome;
-    String classe;
-    int nivel;
-    int pontosDeVida;
-    double poderBase;
+//criando classe abstrata "Personagem" com modificador de acesso, seu tipo e atributo
+//modificador protected  tambémserá acessado pelas subclasses Guerreiro e mago.
+public abstract class Personagem { 
+    protected String nome; 
+    protected String classe;
+    protected int nivel;
+    protected int pontosDeVida;
+    protected double poderBase;
 
-    public Personagem(String nome, String classe, int nivel, int pontosDeVida, double poderBase) { //utilizando construtor para facilidar 
+    //construtor "Personagem" que qualquer classe pode utilizar. 
+    //o construtor é usado de forma automática quando um objeto for criado.
+
+    public Personagem(String nome, String classe, int nivel,int pontosDeVida, double poderBase){
         this.nome = nome;
         this.classe = classe;
         this.nivel = nivel;
         this.pontosDeVida = pontosDeVida;
         this.poderBase = poderBase;
-
     }
 
     public void exibirStatus() { //método "exibirStatus" e saídas.
@@ -22,7 +26,9 @@ public class Personagem { //criando classe "Personagem" e seus atributos
         System.out.println("Pontos de Vida: " + pontosDeVida);
         System.out.println("Poder Base: " + poderBase);
         System.out.println();
-
     }
+
+// método usarHabilidadeEspecial 
+public abstract void usarHabilidadeEspecial();
 }
 

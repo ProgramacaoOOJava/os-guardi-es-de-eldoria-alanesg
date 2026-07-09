@@ -3,6 +3,7 @@ public class Main { //criando classe MAIN//
 
         //Criando array  com um vetor chamado personagens com espaço para 4 posições.
         Personagem[] personagens = new Personagem[4]; 
+        Grupo grupo = new Grupo();
 
         personagens[0] = new Guerreiro("Arthus", 1, 100, 10.5); //criando objeto - heroi 1//
 
@@ -12,10 +13,15 @@ public class Main { //criando classe MAIN//
 
         personagens[3] = new Mago("Celeste", 70, 250, 15);
 
-        for(Personagem p : personagens) {
-            p.exibirStatus(); //mostrará os dados do personagem atual (Guerreiro ou mago)
-            p.usarHabilidadeEspecial(); // mostrará a habilidade do personagem (Guerreiro ou mago)
-            System.out.println(); //espaço para ficar visivelmente organizado//
-        }
+        //dizendo para adicionar personagens ao grupo//
+        grupo.adicionarPersonagem(personagens[0]);
+        grupo.adicionarPersonagem(personagens[1]);
+        grupo.adicionarPersonagem(personagens[2]);
+        grupo.adicionarPersonagem(personagens[3]);
+
+        //reutilizando método//
+        grupo.exibirGrupo();
+
+        grupo.batalhar(personagens[0], personagens[2]);
     }
 }

@@ -30,5 +30,15 @@ public abstract class Personagem {
 
 // método usarHabilidadeEspecial 
 public abstract void usarHabilidadeEspecial();
+
+public String getNome() { //método para ler nome//
+    return nome;
+}
+public int getNivel(){ //método para ler nivel//
+    return nivel;
+}
+public double getPoderBase(){ //método para ler poder base//
+    return poderBase;
+}
 }
 
